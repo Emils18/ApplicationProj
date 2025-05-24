@@ -1,0 +1,84 @@
+﻿<Window x:Class="BookingSystem.MainPanelBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+        xmlns:local="clr-namespace:BookingSystem"
+        mc:Ignorable="d"
+        Title="MainPanelBook" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Grid.RowSpan="2"
+                CornerRadius="0"
+                Margin="0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#3D5AFE" Offset="0.0" />
+                    <GradientStop Color="#673AB7" Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <StackPanel VerticalAlignment="Top" Margin="0,20,0,0">
+                <Border MouseLeftButtonDown="Profile_Click" Background="White"
+                        CornerRadius="60" Margin="0,0,0,20"
+                        Padding="8" Width="89" Height="85" HorizontalAlignment="Center">
+                    <fa:FontAwesome Icon="User"
+                                    Width="60" Height="60" FontSize="50"
+                                    Foreground="#673AB7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+
+                <Border x:Name="BookingIconBorder" Background="White"
+                        CornerRadius="60" Padding="8"
+                        Margin="0,0,0,20"
+                        Width="49" Height="49" HorizontalAlignment="Center"
+                        MouseLeftButtonDown="BookingIcon_Click">
+                    <fa:FontAwesome Icon="Book" FontSize="25"
+                                    Foreground="#3D5AFE" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+
+                <Border x:Name="MyBookingIconBorder" Background="White"
+                        CornerRadius="60" Padding="8"
+                        Margin="0,0,0,20"
+                        Width="49" Height="49" HorizontalAlignment="Center"
+                        MouseLeftButtonDown="MyBookingIcon_Click">
+                    <fa:FontAwesome Icon="Bookmark" FontSize="25"
+                                    Foreground="#3D5AFE" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+
+                <Border x:Name="PaymentIconBorder" Background="White"
+                        CornerRadius="60" Padding="8"
+                        Margin="0,0,0,20"
+                        Width="49" Height="49" HorizontalAlignment="Center"
+                        MouseLeftButtonDown="PaymentIcon_Click">
+                    <fa:FontAwesome Icon="CreditCard" FontSize="25"
+                                    Foreground="#3D5AFE" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+
+                <Border x:Name="LogoutIconBorder" Background="White"
+                        CornerRadius="60" Padding="8"
+                        Margin="0,0,0,20"
+                        Width="49" Height="49" HorizontalAlignment="Center"
+                        MouseLeftButtonDown="LogoutIcon_Click">
+                    <fa:FontAwesome Icon="ArrowCircleLeft" FontSize="25"
+                                    Foreground="#3D5AFE" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.RowSpan="2"
+                Grid.Column="1"
+                Background="White"
+                CornerRadius="29"
+                Padding="10"
+                Margin="0,10,10,10">
+            <ContentControl x:Name="MainContentArea" Background="White"/>
+        </Border>
+
+    </Grid>
+</Window>

@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="BookingSystem.MyBookingPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="700" d:DesignWidth="1000">
+
+    <Grid Background="#F8F8F8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="My Bookings"
+                   FontSize="32"
+                   FontWeight="SemiBold"
+                   Foreground="#333333"
+                   HorizontalAlignment="Center"
+                   Margin="0 30 0 20"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel x:Name="BookingsDisplayPanel" Margin="20 0 20 20"/>
+        </ScrollViewer>
+
+        <Popup x:Name="EditBookingPopup"
+               Placement="Center"
+               StaysOpen="False"
+               AllowsTransparency="True"
+               IsOpen="False"
+               PopupAnimation="Fade">
+            <Border Background="White"
+                    BorderBrush="#CCCCCC"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="25">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="2"
+                                      Direction="270"
+                                      Color="#AAAAAA"
+                                      Opacity="0.3"
+                                      BlurRadius="5"/>
+                </Border.Effect>
+                <StackPanel Width="350">
+                    <TextBlock x:Name="PopupEditBookingIdText"
+                               FontWeight="Bold"
+                               FontSize="18"
+                               Foreground="#007ACC"
+                               HorizontalAlignment="Center"
+                               Margin="0 0 0 20"/>
+
+                    <TextBlock Text="Guest Name:"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Foreground="#555555"
+                               Margin="0 0 0 5"/>
+                    <TextBox x:Name="EditNameInput"
+                             Padding="8"
+                             BorderBrush="#CCCCCC"
+                             BorderThickness="1"
+                             FontSize="14"
+                             Background="White"
+                             VerticalContentAlignment="Center"
+                             Margin="0 0 0 15"/>
+
+                    <TextBlock Text="Contact Info:"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Foreground="#555555"
+                               Margin="0 0 0 5"/>
+                    <TextBox x:Name="EditContactInput"
+                             Padding="8"
+                             BorderBrush="#CCCCCC"
+                             BorderThickness="1"
+                             FontSize="14"
+                             Background="White"
+                             VerticalContentAlignment="Center"
+                             Margin="0 0 0 15"/>
+
+                    <TextBlock Text="Booking Date:"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Foreground="#555555"
+                               Margin="0 0 0 5"/>
+                    <DatePicker x:Name="EditBookingDatePicker"
+                                Padding="8"
+                                BorderBrush="#CCCCCC"
+                                BorderThickness="1"
+                                FontSize="14"
+                                Background="White"
+                                VerticalContentAlignment="Center"
+                                Margin="0 0 0 25"/>
+
+                    <Button Content="Save Changes"
+                            Click="SaveBookingChanges_Click"
+                            Background="#007ACC"
+                            Foreground="White"
+                            Padding="10 15"
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Margin="0 0 0 10"/>
+
+                    <Button Content="Close"
+                            Click="CloseEditPopup_Click"
+                            Background="#E0E0E0"
+                            Foreground="#333333"
+                            Padding="10 15"
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            BorderThickness="0"
+                            Cursor="Hand"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

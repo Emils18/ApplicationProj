@@ -1,0 +1,103 @@
+﻿<Window x:Class="BookingSystem.RegisterForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookingSystem"
+        mc:Ignorable="d"
+        Title="RegisterForm" Height="650" Width="400">
+    <Grid Background="White" Margin="0,0,0,-157">
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,144,0,0" Width="350" Height="443" >
+
+            <StackPanel Margin="0,0,0,20" Width="299">
+                <TextBlock Text="Username" FontSize="14" Foreground="Gray" Margin="12,0,0,10"/>
+                <Border Background="White" BorderBrush="#673AB7" BorderThickness="1" Padding="0" CornerRadius="20">
+                    <TextBox Name="UserName" Height="40"  FontSize="17" Padding="5"
+                             Background="Transparent" Foreground="#673AB7" FontFamily="Arial" BorderThickness="0" TextChanged="UserName_TextChanged"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,20" Width="292">
+                <TextBlock Text="Email" FontSize="14" Foreground="Gray" Width="268" Margin="12,0,0,10"/>
+                <Border Background="White" BorderBrush="#673AB7" BorderThickness="1" Padding="0" CornerRadius="20">
+                    <TextBox x:Name="Email" Height="40" FontSize="17" Padding="5"
+                             Background="Transparent" Foreground="#673AB7" FontFamily="Arial" BorderThickness="0"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10" Width="292">
+                <TextBlock Text="Password" FontSize="14" Foreground="Gray" Margin="15,0,0,5"/>
+                <Border Background="White" BorderBrush="#673AB7" BorderThickness="1" Padding="0" CornerRadius="20">
+                    <PasswordBox Name="Password" Height="40" FontSize="17" Padding="5"
+                                 Background="Transparent" Foreground="#673AB7" FontFamily="Segoe UI" BorderThickness="0"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10" Width="292">
+                <TextBlock Text="New Password" FontSize="14" Foreground="Gray" Margin="5,0,0,5"/>
+                <Border Background="White" BorderBrush="#673AB7" BorderThickness="1" Padding="0" CornerRadius="20">
+                    <PasswordBox Name="NewPassword" Height="40" FontSize="17" Padding="5"
+                                 Background="Transparent" Foreground="#673AB7" FontFamily="Segoe UI" BorderThickness="0"/>
+                </Border>
+            </StackPanel>
+
+            <Border CornerRadius="20" BorderThickness="0" Width="170" Margin="29">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#3D5AFE" Offset="0.1" />
+                        <GradientStop Color="#673AB7" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Content="Register" Width="120" Height="40" Foreground="White" Background="Transparent" BorderThickness="0" Click="Register_Click"/>
+            </Border>
+        </StackPanel>
+
+        <Path Opacity="1"
+              Data="M0,0 L0,450 Q100,250 200,450 T400,450 L400,0 Z"
+              Stretch="Fill" Margin="-384,866,444,-447" Grid.ZIndex="1">
+            <Path.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#3D5AFE" Offset="0.2" />
+                    <GradientStop Color="#673AB7" Offset="1.0" />
+                </LinearGradientBrush>
+            </Path.Fill>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-147.166"/>
+                    <TranslateTransform X="425" Y="24.999999999999972"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Path Opacity="1"
+              Data="M0,0 L0,450 Q100,250 200,450 T400,450 L400,0 Z"
+              Stretch="Fill" Margin="-133,-166,173,760" Grid.ZIndex="1">
+            <Path.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#3D5AFE" Offset="0.2" />
+                    <GradientStop Color="#673AB7" Offset="1.0" />
+                </LinearGradientBrush>
+            </Path.Fill>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.008"/>
+                    <RotateTransform Angle="-322.587"/>
+                    <TranslateTransform X="425.021" Y="25.032"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Image Source="Images1/New.png" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,1,0,0" Width="130" Height="97"/>
+
+        <TextBlock Text="Hello, Friend!"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,98,0,0"/>
+    </Grid>
+</Window>
